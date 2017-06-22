@@ -1,1 +1,51 @@
-Some code here
+import java.io.*;
+
+public class Calc3 {
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new
+				BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Введите значение, функцию и "
+				+ "второе значение через Enter: ");
+		
+		// ХЗ как сделать одной строкой....
+		
+		String str;
+		str = br.readLine();
+		Double x = Double.parseDouble(str);
+		
+		str = br.readLine();
+		String sim = str;	
+		
+		str = br.readLine();
+		Double y = Double.parseDouble(str);
+		
+		char c = sim.charAt(0);
+		switch(c) {
+		case '+':
+			System.out.println(x + y);
+			break;
+			
+		case '-':
+			System.out.println(x - y);
+			break;
+		
+		case '*':
+			System.out.println(x * y);
+			break;
+			
+		case '/':
+			System.out.println(x / y);
+			break;
+						
+		default:
+			System.out.println("Какая-то хрень...");
+		
+			
+	
+		}
+	}
+}
+
+	
+
