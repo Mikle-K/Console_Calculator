@@ -1,26 +1,26 @@
 import java.io.*;
+import java.util.*;
 
 public class Calc3 {
 	public static void main(String[] args) throws IOException {
 		
-		BufferedReader br = new
-				BufferedReader(new InputStreamReader(System.in));
+		Scanner calculate = new Scanner(System.in);
+		do {
 		System.out.println("Введите значение, функцию и "
-				+ "второе значение через Enter: ");
+				+ "второе значение через пробел (q - выход): ");
+										
+		try { 
+		String one = calculate.next();
+		if(one.compareTo("q") == 0) break;
+		double x = Double.parseDouble(one);
+				
+		String sim = calculate.next();	
 		
-		// ХЗ как сделать одной строкой....
-		
-		String str;
-		str = br.readLine();
-		Double x = Double.parseDouble(str);
-		
-		str = br.readLine();
-		String sim = str;	
-		
-		str = br.readLine();
-		Double y = Double.parseDouble(str);
+		String two = calculate.next();
+		double y = Double.parseDouble(two);
 		
 		char c = sim.charAt(0);
+						
 		switch(c) {
 		case '+':
 			System.out.println(x + y);
@@ -40,12 +40,15 @@ public class Calc3 {
 						
 		default:
 			System.out.println("Какая-то хрень...");
-		
-			
-	
 		}
-	}
+		
+		} catch (NumberFormatException exc) {
+			System.out.println("Какая-то фигня введена");
+					}	
+			}	while(1<2);
+	}		
 }
+
 
 	
 
